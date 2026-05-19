@@ -406,6 +406,17 @@ main { position: relative; z-index: 1; }
   max-width: var(--maxw-prose);
 }
 
+.section__themed-sub {
+  font-family: var(--ff-display);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-top: -0.25rem;
+  margin-bottom: var(--sp-3);
+  opacity: 0.7;
+}
+
 .ornament {
   display: flex;
   align-items: center;
@@ -483,6 +494,33 @@ main { position: relative; z-index: 1; }
   font-style: italic;
   max-width: 38ch;
   margin: 0 auto;
+}
+
+.hero__status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin: 0 auto;
+  padding: var(--sp-2) var(--sp-4);
+  background: rgba(106, 183, 212, 0.06);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-sm);
+  color: var(--text-soft);
+  max-width: max-content;
+}
+.hero__status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--soul-glow);
+  box-shadow: 0 0 10px var(--soul-glow);
+  animation: pulseDot 2.4s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes pulseDot {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
 }
 
 .hero__cta {
@@ -626,14 +664,6 @@ main { position: relative; z-index: 1; }
   color: var(--essence);
   font-size: 0.8em;
   margin-left: 0.3em;
-}
-.stat__hint {
-  display: block;
-  margin-top: var(--sp-1);
-  font-family: var(--ff-body);
-  font-size: var(--fs-xs);
-  font-style: italic;
-  color: var(--text-mute);
 }
 
 /* ============ Encantos (charms) ============ */
@@ -910,6 +940,44 @@ main { position: relative; z-index: 1; }
   transition: opacity var(--t-base);
 }
 .copy-btn.is-copied .copy-btn__feedback { opacity: 1; }
+
+/* ============ "Em construção" ============ */
+.building-note {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--sp-5) var(--sp-6);
+  text-align: center;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-md);
+  background: linear-gradient(160deg, rgba(201, 169, 110, 0.04), transparent);
+}
+.building-note__label {
+  font-family: var(--ff-display);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 auto var(--sp-2);
+}
+.building-note__text {
+  font-family: var(--ff-body);
+  font-size: var(--fs-md);
+  font-style: italic;
+  color: var(--text-soft);
+  margin: 0 auto;
+  max-width: 56ch;
+}
+
+/* ============ noscript banner ============ */
+.noscript-banner {
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--bg-elev);
+  border-bottom: 1px solid var(--gold);
+  color: var(--text);
+  text-align: center;
+  font-size: var(--fs-sm);
+}
+.noscript-banner a { color: var(--soul-glow); }
 
 /* ============ Footer ============ */
 .site-footer {

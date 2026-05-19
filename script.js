@@ -198,8 +198,13 @@
     let w = 0, h = 0, dpr = 1, raf = 0;
     let particles = [];
     const mouse = { x: -9999, y: -9999, active: false };
+    const coarse = window.matchMedia?.("(pointer: coarse)").matches;
 
-    const COUNT = () => Math.min(110, Math.floor((w * h) / 18000));
+    const COUNT = () => {
+      const max = coarse ? 55 : 110;
+      const density = coarse ? 36000 : 18000;
+      return Math.min(max, Math.floor((w * h) / density));
+    };
 
     const accent = () =>
       getComputedStyle(document.documentElement).getPropertyValue("--soul-glow").trim() || "#6ab7d4";

@@ -19,7 +19,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400&display=swap">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -29,6 +29,14 @@
   <div id="scroll-progress" aria-hidden="true"><span></span></div>
 
   <a class="skip-link" href="#sobre">Pular para o conteúdo</a>
+
+  <noscript>
+    <div class="noscript-banner" role="note">
+      JavaScript está desativado. A página continua legível, mas o tema claro/escuro,
+      a animação de entrada e o botão de copiar não funcionarão. Meu e-mail é
+      <a href="mailto:pedrophslima@gmail.com">pedrophslima@gmail.com</a>.
+    </div>
+  </noscript>
 
   <header class="site-header">
     <a href="#topo" class="brand" aria-label="Início">
@@ -50,14 +58,14 @@
       </button>
       <ul id="primary-menu" class="nav-list">
         <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#encantos">Encantos</a></li>
-        <li><a href="#memorias">Memórias</a></li>
-        <li><a href="#sonho">Sonho</a></li>
-        <li><a href="#mensageiro">Mensageiro</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#inspiracao">Inspiração</a></li>
+        <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
 
-    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar tema claro e escuro" title="Alternar tema">
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar tema claro e escuro" aria-pressed="false" title="Alternar tema">
       <span class="theme-toggle__icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="4"></circle>
@@ -88,9 +96,13 @@
           Aprendiz de código, errante de <em>Hallownest</em>.<br>
           Construindo a própria forja.
         </p>
+        <p class="hero__status">
+          <span class="hero__status-dot" aria-hidden="true"></span>
+          Atualmente cursando a Trilha Frontend pela IbTech 2026.1 · Primeiro projeto público.
+        </p>
         <div class="hero__cta">
-          <a href="#sobre" class="btn btn--primary">Descer ao Reino</a>
-          <a href="#mensageiro" class="btn btn--ghost">Falar com o Mensageiro</a>
+          <a href="#sobre" class="btn btn--primary">Conhecer mais</a>
+          <a href="#contato" class="btn btn--ghost">Ir ao contato</a>
         </div>
         <figure class="hero__art" aria-hidden="true">
           <div class="hero__art-frame">
@@ -109,8 +121,9 @@
 
     <section id="sobre" class="section section--about" aria-labelledby="sobre-title">
       <div class="section__heading">
-        <span class="section__kicker">Capítulo I</span>
-        <h2 id="sobre-title" class="section__title">Sobre o Errante</h2>
+        <span class="section__kicker">01</span>
+        <h2 id="sobre-title" class="section__title">Sobre</h2>
+        <p class="section__themed-sub">· Sobre o Errante ·</p>
         <div class="ornament" aria-hidden="true">
           <span></span><span class="dot"></span><span></span>
         </div>
@@ -134,8 +147,9 @@
             pixelados, e Hollow Knight é minha obra-prima favorita.
           </p>
           <p>
-            Hoje trilho o caminho do <strong>Frontend</strong> pela IbTech, ainda no início da jornada,
-            mas com a determinação de quem acabou de pegar o Nail e está pronto pra descer ao Poço.
+            Hoje trilho o caminho do <strong>Frontend</strong> pela IbTech, ainda no início.
+            Próximos passos: aprofundar JavaScript, construir projetos próprios e, em breve,
+            começar a contribuir em código aberto.
           </p>
         </div>
 
@@ -154,10 +168,9 @@
               <dd>IbTech · Frontend</dd>
             </div>
             <div class="stat">
-              <dt>Geo coletado</dt>
+              <dt>Ano de nascimento</dt>
               <dd>
                 <span class="geo-counter" data-count-to="2007">0</span>
-                <span class="stat__hint">moedas de Hallownest, em ano de nascimento</span>
               </dd>
             </div>
           </dl>
@@ -165,12 +178,13 @@
       </div>
     </section>
 
-    <section id="encantos" class="section section--charms" aria-labelledby="charms-title">
+    <section id="habilidades" class="section section--charms" aria-labelledby="charms-title">
       <div class="section__heading">
-        <span class="section__kicker">Capítulo II</span>
-        <h2 id="charms-title" class="section__title">Encantos Equipados</h2>
+        <span class="section__kicker">02</span>
+        <h2 id="charms-title" class="section__title">Habilidades</h2>
+        <p class="section__themed-sub">· Encantos ·</p>
         <p class="section__sub">
-          Habilidades e interesses afixados ao Cavaleiro. Cada Encanto custa <span aria-label="entalhes">Notches</span>.
+          O que sei usar e o que me move. Cada item tem um custo em entalhes — porque referência boa fica.
         </p>
         <div class="ornament" aria-hidden="true">
           <span></span><span class="dot"></span><span></span>
@@ -191,7 +205,7 @@
             <span class="charm__notch">1</span>
           </div>
           <h3 class="charm__name">HTML5</h3>
-          <p class="charm__desc">O esqueleto. Semântica, acessibilidade e Open Graph — a base de todo grimório.</p>
+          <p class="charm__desc">Estrutura semântica, acessibilidade e Open Graph. A base de toda página.</p>
         </li>
         <li class="charm" data-category="frontend">
           <div class="charm__medallion" aria-hidden="true">
@@ -199,7 +213,7 @@
             <span class="charm__notch">2</span>
           </div>
           <h3 class="charm__name">CSS3</h3>
-          <p class="charm__desc">A pele e o ritmo. Variáveis, Flexbox, Grid e temas que mudam com um sopro.</p>
+          <p class="charm__desc">Variáveis, Flexbox, Grid, dois temas e responsividade de 360px a 1920px.</p>
         </li>
         <li class="charm" data-category="frontend">
           <div class="charm__medallion" aria-hidden="true">
@@ -207,7 +221,7 @@
             <span class="charm__notch">3</span>
           </div>
           <h3 class="charm__name">JavaScript</h3>
-          <p class="charm__desc">A alma. Interações, observadores e pequenos feitiços que dão vida à página.</p>
+          <p class="charm__desc">Interações, manipulação de DOM e APIs do navegador. Vanilla, sem frameworks.</p>
         </li>
         <li class="charm" data-category="ferramentas">
           <div class="charm__medallion" aria-hidden="true">
@@ -215,7 +229,7 @@
             <span class="charm__notch">2</span>
           </div>
           <h3 class="charm__name">Git &amp; GitHub</h3>
-          <p class="charm__desc">O diário do Errante. Cada commit, uma página gravada para os que vierem depois.</p>
+          <p class="charm__desc">Versionamento, branches e commits limpos. Diário público do meu progresso.</p>
         </li>
         <li class="charm" data-category="ferramentas">
           <div class="charm__medallion" aria-hidden="true">
@@ -252,11 +266,12 @@
       </ul>
     </section>
 
-    <section id="memorias" class="section section--gallery" aria-labelledby="memorias-title">
+    <section id="galeria" class="section section--gallery" aria-labelledby="memorias-title">
       <div class="section__heading">
-        <span class="section__kicker">Capítulo III</span>
-        <h2 id="memorias-title" class="section__title">Memórias de Hallownest</h2>
-        <p class="section__sub">Fragmentos visuais. Substitua pelas suas fotos em <code>assets/</code> quando quiser.</p>
+        <span class="section__kicker">03</span>
+        <h2 id="memorias-title" class="section__title">Galeria</h2>
+        <p class="section__themed-sub">· Memórias de Hallownest ·</p>
+        <p class="section__sub">Fragmentos visuais. Em breve substituídos por fotos minhas.</p>
         <div class="ornament" aria-hidden="true">
           <span></span><span class="dot"></span><span></span>
         </div>
@@ -287,11 +302,12 @@
       </div>
     </section>
 
-    <section id="sonho" class="section section--video" aria-labelledby="sonho-title">
+    <section id="inspiracao" class="section section--video" aria-labelledby="sonho-title">
       <div class="section__heading">
-        <span class="section__kicker">Capítulo IV</span>
-        <h2 id="sonho-title" class="section__title">Um Sonho que Volta</h2>
-        <p class="section__sub">O sonho que me empurrou pra cá — trailer oficial de Hollow Knight.</p>
+        <span class="section__kicker">04</span>
+        <h2 id="sonho-title" class="section__title">Inspiração</h2>
+        <p class="section__themed-sub">· Um sonho que volta ·</p>
+        <p class="section__sub">O jogo que me empurrou pra cá — trailer oficial de Hollow Knight.</p>
         <div class="ornament" aria-hidden="true">
           <span></span><span class="dot"></span><span></span>
         </div>
@@ -303,7 +319,7 @@
             src="https://www.youtube-nocookie.com/embed/UAO2urG23S4?rel=0"
             title="Hollow Knight — Launch Trailer"
             loading="lazy"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
             sandbox="allow-scripts allow-same-origin allow-presentation allow-popups"
             referrerpolicy="strict-origin-when-cross-origin"></iframe>
@@ -311,11 +327,19 @@
       </div>
     </section>
 
-    <section id="mensageiro" class="section section--contact" aria-labelledby="contato-title">
+    <aside class="building-note" aria-label="Próximos projetos">
+      <p class="building-note__label">Em construção</p>
+      <p class="building-note__text">
+        Próximos projetos chegando aqui em breve. Esta é a primeira página da história — não a última.
+      </p>
+    </aside>
+
+    <section id="contato" class="section section--contact" aria-labelledby="contato-title">
       <div class="section__heading">
-        <span class="section__kicker">Capítulo Final</span>
-        <h2 id="contato-title" class="section__title">Falar com o Mensageiro</h2>
-        <p class="section__sub">A Cornifer de Hallownest entregaria estes endereços. Aqui estão.</p>
+        <span class="section__kicker">05</span>
+        <h2 id="contato-title" class="section__title">Contato</h2>
+        <p class="section__themed-sub">· Falar com o Mensageiro ·</p>
+        <p class="section__sub">Aberto a conversas — projetos, oportunidades de estágio, networking ou só uma boa indicação de jogo.</p>
         <div class="ornament" aria-hidden="true">
           <span></span><span class="dot"></span><span></span>
         </div>
