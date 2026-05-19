@@ -1,6 +1,6 @@
-# Pedro Henrique Sousa Lima — Frontend
+# Pedro Henrique Sousa Lima
 
-Cartão de visita pessoal feito como **Projeto 01** da Trilha Frontend da **IbTech 2026.1**, com inspiração visual no jogo **Hollow Knight**.
+Cartão de visita pessoal feito como primeiro projeto público da minha trajetória. Sou estudante de **Engenharia de Software** no **Ibmec BH** e este projeto é o **Desafio 01** proposto pela **Liga IbTech** — a liga de tecnologia da faculdade. Visual inspirado no jogo **Hollow Knight**.
 
 ## Sobre
 
@@ -81,4 +81,4 @@ python3 -m http.server 8000
 
 > "Não em soluços, mas em chamas brilhantes."
 
-IbTech · Ligas Tech IBMEC BH · 2026.1
+Liga IbTech · Ibmec BH · 2026.1
