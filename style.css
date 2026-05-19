@@ -1067,6 +1067,26 @@ main { position: relative; z-index: 1; }
   color: var(--text-soft);
 }
 
+#konami-progress {
+  position: fixed;
+  bottom: var(--sp-4);
+  right: var(--sp-4);
+  z-index: 150;
+  font-family: var(--ff-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  background: var(--bg-overlay);
+  padding: var(--sp-2) var(--sp-3);
+  border: 1px solid var(--gold-soft);
+  border-radius: var(--radius-full);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 240ms ease;
+  text-shadow: 0 0 8px var(--gold-soft);
+}
+#konami-progress.is-active { opacity: 0.85; }
+
 body.is-dreaming {
   filter: hue-rotate(-15deg) saturate(0.75) brightness(0.85);
   transition: filter var(--t-slow);

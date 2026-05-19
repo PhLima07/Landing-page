@@ -301,6 +301,9 @@
   /* =========================================================
      6. Konami code → Dream Nail (easter egg criativo)
      ↑ ↑ ↓ ↓ ← → ← → B A  → ativa overlay onírica
+     Usa máquina de estado: avança o índice quando a tecla bate,
+     reseta quando erra (ou volta pra 1 se errou pra um Up inicial).
+     Mostra um indicador discreto no canto após 3 teclas corretas.
      ========================================================= */
   const DreamNail = (() => {
     const overlay = $("#dream-overlay");
@@ -311,14 +314,35 @@
       "ArrowLeft","ArrowRight","ArrowLeft","ArrowRight",
       "b","a",
     ];
-    let buf = [];
+    let idx = 0;
     let active = false;
+    let progress = null;
+
+    const buildProgress = () => {
+      const el = document.createElement("div");
+      el.id = "konami-progress";
+      el.setAttribute("aria-hidden", "true");
+      el.textContent = "";
+      document.body.appendChild(el);
+      return el;
+    };
+
+    const renderProgress = () => {
+      if (!progress) progress = buildProgress();
+      if (idx >= 3) {
+        progress.textContent = "●".repeat(idx) + "○".repeat(SEQ.length - idx);
+        progress.classList.add("is-active");
+      } else {
+        progress.classList.remove("is-active");
+      }
+    };
 
     const open = () => {
       if (active) return;
       active = true;
       overlay.classList.add("is-active");
       document.body.classList.add("is-dreaming");
+      if (progress) progress.classList.remove("is-active");
     };
 
     const close = () => {
@@ -331,13 +355,21 @@
     const init = () => {
       document.addEventListener("keydown", (e) => {
         if (active) { close(); return; }
+
         const k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
-        buf.push(k);
-        if (buf.length > SEQ.length) buf = buf.slice(-SEQ.length);
-        if (buf.length === SEQ.length && buf.every((v, i) => v === SEQ[i])) {
-          open();
-          buf = [];
+
+        if (k === SEQ[idx]) {
+          idx++;
+          if (idx === SEQ.length) {
+            open();
+            idx = 0;
+          }
+        } else if (k === SEQ[0]) {
+          idx = 1;
+        } else {
+          idx = 0;
         }
+        renderProgress();
       });
 
       overlay.addEventListener("click", close);
