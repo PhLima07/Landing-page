@@ -1,4 +1,4 @@
-# Pedro Henrique Sousa Lima — O Cavaleiro do Frontend
+# Pedro Henrique Sousa Lima — Frontend
 
 Cartão de visita pessoal feito como **Projeto 01** da Trilha Frontend da **IbTech 2026.1**, com inspiração visual no jogo **Hollow Knight**.
 
@@ -6,7 +6,7 @@ Cartão de visita pessoal feito como **Projeto 01** da Trilha Frontend da **IbTe
 
 Página única, em HTML, CSS e JavaScript puros — sem frameworks, sem build, sem atalhos. A ideia é simples: quando alguém perguntar o que eu faço, eu mando o link.
 
-A identidade é toda Hallownest: paleta de tinta noturna, fonte serifada ornada (Cinzel), partículas de *Soul* flutuando ao fundo, habilidades estilizadas como **Encantos (Charms)** com custo de Notches, e um *easter egg* escondido para quem conhece o jogo.
+A identidade visual é toda inspirada em Hollow Knight: paleta de tinta noturna, fonte serifada ornada (Cinzel), partículas de soul flutuando ao fundo, habilidades estilizadas como medalhões com custo em entalhes, e um *easter egg* escondido para quem conhece o jogo.
 
 ## Tecnologias
 
@@ -34,8 +34,9 @@ python3 -m http.server 8000
 ├── script.js
 ├── README.md
 └── assets/
-    ├── favicon.svg     # máscara do Cavaleiro
-    ├── knight.svg      # silhueta do Cavaleiro (hero)
+    ├── favicon.svg     # ícone (máscara estilizada)
+    ├── knight.jpg      # imagem do hero
+    ├── hk-logo.png     # logo do jogo (atribuição no rodapé)
     ├── memory-1.jpg    # galeria — troque pela sua foto
     ├── memory-2.jpg    # galeria — troque pela sua foto
     ├── memory-3.jpg    # galeria — troque pela sua foto
@@ -49,16 +50,16 @@ python3 -m http.server 8000
 - **Toggle de tema claro/escuro** — alterna `data-theme` no `<html>`, persiste em `localStorage` e respeita `prefers-color-scheme` na primeira visita.
 - **Botão de copiar e-mail** — usa Clipboard API com fallback, dá feedback visual por ~2 segundos.
 - **Animação de entrada** — seções fazem fade-in conforme entram na viewport via `IntersectionObserver`.
-- **Filtro de Encantos** — filtra as habilidades por categoria (Frontend / Ferramentas / Paixões).
+- **Filtro de habilidades** — filtra os cards por categoria (Frontend / Ferramentas / Paixões).
 - **Menu mobile** — abre/fecha no hambúrguer, fecha com Esc e ao clicar fora.
 - **Contador animado** — anima a contagem de "Geo" quando entra na viewport.
 
 ### Toques criativos (autorais)
 
 - **Partículas de Soul** desenhadas em `<canvas>` ao fundo, que reagem ao cursor.
-- **Encantos (Charms)** — habilidades estilizadas como medalhões com símbolo central e custo em Notches, fiéis ao visual do jogo.
+- **Cards de habilidade** — estilizados como medalhões circulares com símbolo central e custo em "entalhes", inspirados nos Charms do jogo.
 - **Easter egg do Dream Nail** — digite o Konami Code (↑ ↑ ↓ ↓ ← → ← → B A) em qualquer ponto da página e o reino entra em estado onírico, revelando uma essência.
-- **Tipografia & paleta** — Cinzel para títulos, EB Garamond para corpo e tons de tinta/parchment fiéis a Hallownest.
+- **Tipografia & paleta** — Cinzel para títulos, EB Garamond para corpo e tons de tinta/parchment fiéis ao jogo.
 
 ## Acessibilidade
 
