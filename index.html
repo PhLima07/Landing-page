@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pedro Henrique Sousa Lima — cartão de visita pessoal inspirado em Hollow Knight. Trilha Frontend, IbTech 2026.1.">
+  <meta name="author" content="Pedro Henrique Sousa Lima">
+  <meta name="theme-color" content="#0a0d14">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pedro Henrique Sousa Lima — O Cavaleiro do Frontend">
+  <meta property="og:description" content="Cartão de visita pessoal. Trilha Frontend IbTech 2026.1, com a alma de Hallownest.">
+  <meta property="og:image" content="assets/og-image.jpg">
+
+  <title>Pedro Henrique Sousa Lima — O Cavaleiro do Frontend</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="soul-canvas" aria-hidden="true"></canvas>
+
+  <a class="skip-link" href="#sobre">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <a href="#topo" class="brand" aria-label="Início">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" width="36" height="36">
+          <path d="M22 26 L18 8 L26 22 Z" fill="currentColor"/>
+          <path d="M42 26 L46 8 L38 22 Z" fill="currentColor"/>
+          <ellipse cx="32" cy="34" rx="13" ry="15" fill="currentColor"/>
+          <ellipse cx="28" cy="34" rx="1.8" ry="3.5" fill="var(--bg)"/>
+          <ellipse cx="36" cy="34" rx="1.8" ry="3.5" fill="var(--bg)"/>
+        </svg>
+      </span>
+      <span class="brand__text">PHL</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Navegação principal">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="primary-menu" class="nav-list">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#encantos">Encantos</a></li>
+        <li><a href="#memorias">Memórias</a></li>
+        <li><a href="#sonho">Sonho</a></li>
+        <li><a href="#mensageiro">Mensageiro</a></li>
+      </ul>
+    </nav>
+
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar tema claro e escuro" title="Alternar tema">
+      <span class="theme-toggle__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"></circle>
+          <line x1="12" y1="2" x2="12" y2="5"></line>
+          <line x1="12" y1="19" x2="12" y2="22"></line>
+          <line x1="4.2" y1="4.2" x2="6.3" y2="6.3"></line>
+          <line x1="17.7" y1="17.7" x2="19.8" y2="19.8"></line>
+          <line x1="2" y1="12" x2="5" y2="12"></line>
+          <line x1="19" y1="12" x2="22" y2="12"></line>
+          <line x1="4.2" y1="19.8" x2="6.3" y2="17.7"></line>
+          <line x1="17.7" y1="6.3" x2="19.8" y2="4.2"></line>
+        </svg>
+      </span>
+    </button>
+  </header>
+
+  <main id="topo">
+
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+      <div class="hero__vignette" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <p class="hero__eyebrow">IbTech · Trilha Frontend · 2026.1</p>
+        <h1 id="hero-title" class="hero__title">
+          <span class="hero__title-line">Pedro Henrique</span>
+          <span class="hero__title-line">Sousa Lima</span>
+        </h1>
+        <p class="hero__subtitle">
+          Errante de Hallownest, aprendiz de código.
+          Um cavaleiro do <em>Frontend</em> em busca da própria forja.
+        </p>
+        <div class="hero__cta">
+          <a href="#sobre" class="btn btn--primary">Descer ao Reino</a>
+          <a href="#mensageiro" class="btn btn--ghost">Falar com o Mensageiro</a>
+        </div>
+        <div class="hero__art" aria-hidden="true">
+          <img src="assets/knight.svg" alt="" loading="eager" width="260" height="360">
+        </div>
+        <div class="hero__scroll-hint" aria-hidden="true">
+          <span>desça</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="6 13 12 19 18 13"></polyline>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section section--about" aria-labelledby="sobre-title">
+      <div class="section__heading">
+        <span class="section__kicker">Capítulo I</span>
+        <h2 id="sobre-title" class="section__title">Sobre o Errante</h2>
+        <div class="ornament" aria-hidden="true">
+          <span></span><span class="dot"></span><span></span>
+        </div>
+      </div>
+
+      <div class="about">
+        <div class="about__body">
+          <p class="about__lead">
+            Belo Horizonte é meu Hallownest natal — nasci em <strong>19 de dezembro de 2007</strong>,
+            entre as ladeiras da cidade que viraram corredores conhecidos.
+          </p>
+          <p>
+            Estudei a vida toda no <strong>Colégio Arnaldo</strong>, e foi entre suas paredes que comecei
+            a perceber duas coisas: que adoro entender como o mundo funciona, e que adoro mais ainda
+            <em>construir mundos próprios</em>. Daí o código me fisgou — cada linha é um feitiço, cada
+            bug é um pequeno boss.
+          </p>
+          <p>
+            Quando não estou no teclado, estou com a chuteira nos pés. <strong>Futebol</strong> é minha
+            segunda religião. E quando volto à tela, viro jogador de PC — passo horas em mundos
+            pixelados, e Hollow Knight é minha obra-prima favorita.
+          </p>
+          <p>
+            Hoje trilho o caminho do <strong>Frontend</strong> pela IbTech, ainda no início da jornada,
+            mas com a determinação de quem acabou de pegar o Nail e está pronto pra descer ao Poço.
+          </p>
+        </div>
+
+        <aside class="about__stats" aria-label="Resumo">
+          <dl class="stat-list">
+            <div class="stat">
+              <dt>Origem</dt>
+              <dd>Belo Horizonte, MG</dd>
+            </div>
+            <div class="stat">
+              <dt>Forja</dt>
+              <dd>Colégio Arnaldo</dd>
+            </div>
+            <div class="stat">
+              <dt>Trilha</dt>
+              <dd>IbTech · Frontend</dd>
+            </div>
+            <div class="stat">
+              <dt>Geo coletado</dt>
+              <dd><span class="geo-counter" data-count-to="2007">0</span></dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section id="encantos" class="section section--charms" aria-labelledby="charms-title">
+      <div class="section__heading">
+        <span class="section__kicker">Capítulo II</span>
+        <h2 id="charms-title" class="section__title">Encantos Equipados</h2>
+        <p class="section__sub">
+          Habilidades e interesses afixados ao Cavaleiro. Cada Encanto custa <span aria-label="entalhes">Notches</span>.
+        </p>
+        <div class="ornament" aria-hidden="true">
+          <span></span><span class="dot"></span><span></span>
+        </div>
+      </div>
+
+      <div class="charms__filters" role="tablist" aria-label="Filtrar encantos">
+        <button class="chip is-active" type="button" role="tab" aria-selected="true" data-filter="all">Todos</button>
+        <button class="chip" type="button" role="tab" aria-selected="false" data-filter="frontend">Frontend</button>
+        <button class="chip" type="button" role="tab" aria-selected="false" data-filter="ferramentas">Ferramentas</button>
+        <button class="chip" type="button" role="tab" aria-selected="false" data-filter="paixoes">Paixões</button>
+      </div>
+
+      <ul class="charms" role="list">
+        <li class="charm" data-category="frontend">
+          <div class="charm__medallion" aria-hidden="true">
+            <span class="charm__symbol">&lt;/&gt;</span>
+            <span class="charm__notch">1</span>
+          </div>
+          <h3 class="charm__name">HTML5</h3>
+          <p class="charm__desc">O esqueleto. Semântica, acessibilidade e Open Graph — a base de todo grimório.</p>
+        </li>
+        <li class="charm" data-category="frontend">
+          <div class="charm__medallion" aria-hidden="true">
+            <span class="charm__symbol">{ }</span>
+            <span class="charm__notch">2</span>
+          </div>
+          <h3 class="charm__name">CSS3</h3>
+          <p class="charm__desc">A pele e o ritmo. Variáveis, Flexbox, Grid e temas que mudam com um sopro.</p>
+        </li>
+        <li class="charm" data-category="frontend">
+          <div class="charm__medallion" aria-hidden="true">
+            <span class="charm__symbol">JS</span>
+            <span class="charm__notch">3</span>
+          </div>
+          <h3 class="charm__name">JavaScript</h3>
+          <p class="charm__desc">A alma. Interações, observadores e pequenos feitiços que dão vida à página.</p>
+        </li>
+        <li class="charm" data-category="ferramentas">
+          <div class="charm__medallion" aria-hidden="true">
+            <span class="charm__symbol">⎇</span>
+            <span class="charm__notch">2</span>
+          </div>
+          <h3 class="charm__name">Git &amp; GitHub</h3>
+          <p class="charm__desc">O diário do Errante. Cada commit, uma página gravada para os que vierem depois.</p>
+        </li>
+        <li class="charm" data-category="ferramentas">
+          <div class="charm__medallion" aria-hidden="true">
+            <span class="charm__symbol">▣</span>
+            <span class="charm__notch">1</span>
+          </div>
+          <h3 class="charm__name">VS Code</h3>
+          <p class="charm__desc">A bigorna onde os feitiços ganham forma. Atalhos, extensões e foco.</p>
+        </li>
+        <li class="charm" data-category="paixoes">
+          <div class="charm__medallion" aria-hidden="true">
+            <span class="charm__symbol">⚽</span>
+            <span class="charm__notch">3</span>
+          </div>
+          <h3 class="charm__name">Futebol</h3>
+          <p class="charm__desc">Religião paralela. Onde o teclado descansa, a chuteira assume o ofício.</p>
+        </li>
+        <li class="charm" data-category="paixoes">
+          <div class="charm__medallion" aria-hidden="true">
+            <span class="charm__symbol">🎮</span>
+            <span class="charm__notch">4</span>
+          </div>
+          <h3 class="charm__name">PC Gaming</h3>
+          <p class="charm__desc">Hollow Knight, mundos pixelados e horas perdidas em corredores sem mapa.</p>
+        </li>
+        <li class="charm" data-category="paixoes">
+          <div class="charm__medallion" aria-hidden="true">
+            <span class="charm__symbol">⌘</span>
+            <span class="charm__notch">2</span>
+          </div>
+          <h3 class="charm__name">Computação</h3>
+          <p class="charm__desc">A curiosidade primeira: entender como cada peça da máquina conversa.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="memorias" class="section section--gallery" aria-labelledby="memorias-title">
+      <div class="section__heading">
+        <span class="section__kicker">Capítulo III</span>
+        <h2 id="memorias-title" class="section__title">Memórias de Hallownest</h2>
+        <p class="section__sub">Fragmentos visuais. Substitua pelas suas fotos em <code>assets/</code> quando quiser.</p>
+        <div class="ornament" aria-hidden="true">
+          <span></span><span class="dot"></span><span></span>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <figure class="gallery__item">
+          <img src="assets/memory-1.jpg"
+               alt="Cena atmosférica de Hollow Knight — ambiente sombrio com tons azulados."
+               loading="lazy" width="1200" height="675">
+          <figcaption>Sobre o Reino — onde a aventura começa.</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <img src="assets/memory-2.jpg"
+               alt="Arte panorâmica do mundo de Hollow Knight."
+               loading="lazy" width="1200" height="675">
+          <figcaption>Mapas que me ensinaram a explorar sem pressa.</figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <img src="assets/memory-3.jpg"
+               alt="Cápsula promocional de Hollow Knight com o Cavaleiro em destaque."
+               loading="lazy" width="1200" height="675">
+          <figcaption>O Cavaleiro — quem fui virando enquanto jogava.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="sonho" class="section section--video" aria-labelledby="sonho-title">
+      <div class="section__heading">
+        <span class="section__kicker">Capítulo IV</span>
+        <h2 id="sonho-title" class="section__title">Um Sonho que Volta</h2>
+        <p class="section__sub">Trailer oficial de Hollow Knight — a obra que mais me marcou.</p>
+        <div class="ornament" aria-hidden="true">
+          <span></span><span class="dot"></span><span></span>
+        </div>
+      </div>
+
+      <div class="video-frame">
+        <div class="video-frame__inner">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/UAO2urG23S4?rel=0"
+            title="Hollow Knight — Launch Trailer"
+            loading="lazy"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="mensageiro" class="section section--contact" aria-labelledby="contato-title">
+      <div class="section__heading">
+        <span class="section__kicker">Capítulo Final</span>
+        <h2 id="contato-title" class="section__title">Falar com o Mensageiro</h2>
+        <p class="section__sub">A Cornifer de Hallownest entregaria estes endereços. Aqui estão.</p>
+        <div class="ornament" aria-hidden="true">
+          <span></span><span class="dot"></span><span></span>
+        </div>
+      </div>
+
+      <ul class="contact" role="list">
+        <li class="contact__card">
+          <span class="contact__label">LinkedIn</span>
+          <a class="contact__link"
+             href="https://www.linkedin.com/in/pedro-henrique-sousa-lima-a506573b4/"
+             target="_blank" rel="noopener noreferrer">
+             /in/pedro-henrique-sousa-lima
+          </a>
+        </li>
+        <li class="contact__card">
+          <span class="contact__label">GitHub</span>
+          <a class="contact__link"
+             href="https://github.com/PhLima07"
+             target="_blank" rel="noopener noreferrer">
+             @PhLima07
+          </a>
+        </li>
+        <li class="contact__card contact__card--email">
+          <span class="contact__label">E-mail</span>
+          <div class="contact__email-row">
+            <a class="contact__link" href="mailto:pedrophslima@gmail.com">pedrophslima@gmail.com</a>
+            <button id="copy-email"
+                    class="copy-btn"
+                    type="button"
+                    data-email="pedrophslima@gmail.com"
+                    aria-label="Copiar e-mail">
+              <span class="copy-btn__label">Copiar</span>
+              <span class="copy-btn__feedback" aria-hidden="true">Copiado!</span>
+            </button>
+          </div>
+        </li>
+        <li class="contact__card">
+          <span class="contact__label">Telefone</span>
+          <a class="contact__link" href="tel:+5531998326612">(31) 99832-6612</a>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p class="site-footer__line">
+      Forjado em HTML, CSS e JavaScript puros — sem frameworks, sem atalhos.
+    </p>
+    <p class="site-footer__line site-footer__line--small">
+      © <span id="year">2026</span> Pedro Henrique Sousa Lima · IbTech 2026.1 ·
+      <span class="dream-hint" aria-hidden="true" title="Há ecos de Hallownest aqui. Tente ↑ ↑ ↓ ↓ ← → ← → B A">há ecos aqui…</span>
+    </p>
+  </footer>
+
+  <div id="dream-overlay" class="dream-overlay" aria-hidden="true">
+    <div class="dream-overlay__inner">
+      <p class="dream-overlay__title">Dream Nail</p>
+      <p class="dream-overlay__line">"Não em soluços, mas em chamas brilhantes."</p>
+      <p class="dream-overlay__line dream-overlay__line--small">— Pedro encontrou uma essência. Pressione qualquer tecla para acordar.</p>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

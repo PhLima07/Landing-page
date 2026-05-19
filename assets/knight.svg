@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 360" aria-hidden="true">
+  <defs>
+    <radialGradient id="auraGrad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#6ab7d4" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#6ab7d4" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#6ab7d4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cloakGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a2030"/>
+      <stop offset="100%" stop-color="#05070b"/>
+    </linearGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <circle cx="130" cy="150" r="140" fill="url(#auraGrad)"/>
+
+  <g filter="url(#softGlow)">
+    <path d="M92 110 Q78 70 70 18 Q92 50 108 92 Z" fill="#efe6cf"/>
+    <path d="M168 110 Q182 70 190 18 Q168 50 152 92 Z" fill="#efe6cf"/>
+  </g>
+
+  <ellipse cx="130" cy="130" rx="48" ry="58" fill="#efe6cf"/>
+  <ellipse cx="130" cy="130" rx="48" ry="58" fill="none" stroke="#c9bf9a" stroke-width="1.2"/>
+
+  <ellipse cx="113" cy="128" rx="4.5" ry="11" fill="#06080d"/>
+  <ellipse cx="147" cy="128" rx="4.5" ry="11" fill="#06080d"/>
+
+  <path d="M82 168
+           Q130 196 178 168
+           L196 320
+           Q175 340 130 340
+           Q85 340 64 320 Z"
+        fill="url(#cloakGrad)"/>
+
+  <path d="M82 168 Q130 196 178 168" fill="none" stroke="#1f2738" stroke-width="2"/>
+
+  <line x1="200" y1="190" x2="252" y2="138" stroke="#bfb699" stroke-width="3" stroke-linecap="round"/>
+  <line x1="195" y1="195" x2="207" y2="183" stroke="#7a7359" stroke-width="6" stroke-linecap="round"/>
+</svg>
