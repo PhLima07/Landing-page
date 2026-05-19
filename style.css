@@ -406,16 +406,6 @@ main { position: relative; z-index: 1; }
   max-width: var(--maxw-prose);
 }
 
-.section__themed-sub {
-  font-family: var(--ff-display);
-  font-size: var(--fs-xs);
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  color: var(--text-mute);
-  margin-top: -0.25rem;
-  margin-bottom: var(--sp-3);
-  opacity: 0.7;
-}
 
 .ornament {
   display: flex;
@@ -998,12 +988,6 @@ main { position: relative; z-index: 1; }
   font-style: normal;
   letter-spacing: 0.05em;
 }
-.dream-hint {
-  border-bottom: 1px dotted var(--gold-soft);
-  cursor: help;
-  color: var(--gold);
-}
-
 .site-footer__attrib {
   display: flex;
   align-items: center;
