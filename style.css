@@ -1027,7 +1027,11 @@ main { position: relative; z-index: 1; }
   z-index: 9999;
   display: grid;
   place-items: center;
-  background: radial-gradient(ellipse at center, rgba(240, 214, 140, 0.16), rgba(10, 13, 20, 0.95) 70%);
+  background:
+    radial-gradient(ellipse at center, rgba(240, 214, 140, 0.18), transparent 60%),
+    rgba(6, 8, 14, 0.92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--t-slow);
@@ -1043,12 +1047,14 @@ main { position: relative; z-index: 1; }
 }
 .dream-overlay__title {
   font-family: var(--ff-display);
-  font-size: var(--fs-xl);
+  font-size: clamp(2.25rem, 8vw, 4rem);
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--essence);
+  color: #f7e9b8;
   margin-bottom: var(--sp-5);
-  text-shadow: 0 0 40px var(--essence);
+  text-shadow:
+    0 0 20px rgba(247, 233, 184, 0.8),
+    0 0 60px rgba(240, 214, 140, 0.5);
   animation: dreamPulse 2.6s ease-in-out infinite;
 }
 @keyframes dreamPulse {
@@ -1059,12 +1065,15 @@ main { position: relative; z-index: 1; }
   font-family: var(--ff-body);
   font-size: var(--fs-md);
   font-style: italic;
-  color: var(--soul);
+  color: #d6e6ec;
   margin: 0 auto var(--sp-3);
+  text-shadow: 0 0 12px rgba(106, 183, 212, 0.4);
 }
 .dream-overlay__line--small {
   font-size: var(--fs-sm);
-  color: var(--text-soft);
+  color: #9aacb8;
+  font-style: normal;
+  letter-spacing: 0.1em;
 }
 
 #konami-progress {
@@ -1087,10 +1096,7 @@ main { position: relative; z-index: 1; }
 }
 #konami-progress.is-active { opacity: 0.85; }
 
-body.is-dreaming {
-  filter: hue-rotate(-15deg) saturate(0.75) brightness(0.85);
-  transition: filter var(--t-slow);
-}
+body.is-dreaming { overflow: hidden; }
 
 /* ============ Animação de entrada ============ */
 .reveal {

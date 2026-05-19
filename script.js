@@ -301,9 +301,7 @@
   /* =========================================================
      6. Konami code → Dream Nail (easter egg criativo)
      ↑ ↑ ↓ ↓ ← → ← → B A  → ativa overlay onírica
-     Usa máquina de estado: avança o índice quando a tecla bate,
-     reseta quando erra (ou volta pra 1 se errou pra um Up inicial).
-     Mostra um indicador discreto no canto após 3 teclas corretas.
+     Desktop: teclado. Mobile: swipes + 2 toques.
      ========================================================= */
   const DreamNail = (() => {
     const overlay = $("#dream-overlay");
@@ -317,6 +315,7 @@
     let idx = 0;
     let active = false;
     let progress = null;
+    let tapToggle = 0;
 
     const buildProgress = () => {
       const el = document.createElement("div");
@@ -343,6 +342,7 @@
       overlay.classList.add("is-active");
       document.body.classList.add("is-dreaming");
       if (progress) progress.classList.remove("is-active");
+      tapToggle = 0;
     };
 
     const close = () => {
@@ -352,26 +352,64 @@
       document.body.classList.remove("is-dreaming");
     };
 
-    const init = () => {
-      document.addEventListener("keydown", (e) => {
-        if (active) { close(); return; }
-
-        const k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
-
-        if (k === SEQ[idx]) {
-          idx++;
-          if (idx === SEQ.length) {
-            open();
-            idx = 0;
-          }
-        } else if (k === SEQ[0]) {
-          idx = 1;
-        } else {
+    const feed = (k) => {
+      if (active) { close(); return; }
+      if (k === SEQ[idx]) {
+        idx++;
+        if (idx === SEQ.length) {
+          open();
           idx = 0;
         }
-        renderProgress();
-      });
+      } else if (k === SEQ[0]) {
+        idx = 1;
+      } else {
+        idx = 0;
+        tapToggle = 0;
+      }
+      renderProgress();
+    };
 
+    // --- Touch (swipes + taps) ---
+    let tStart = null;
+    const MIN_SWIPE = 32;
+    const MAX_TAP_DIST = 14;
+    const MAX_TAP_MS = 280;
+
+    const onTouchStart = (e) => {
+      const t = e.changedTouches[0];
+      tStart = { x: t.clientX, y: t.clientY, t: Date.now() };
+    };
+
+    const onTouchEnd = (e) => {
+      if (!tStart) return;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - tStart.x;
+      const dy = t.clientY - tStart.y;
+      const dt = Date.now() - tStart.t;
+      const dist = Math.hypot(dx, dy);
+      tStart = null;
+
+      if (active) { close(); return; }
+
+      if (dist < MAX_TAP_DIST && dt < MAX_TAP_MS) {
+        const k = tapToggle % 2 === 0 ? "b" : "a";
+        tapToggle++;
+        feed(k);
+      } else if (dist >= MIN_SWIPE) {
+        let k;
+        if (Math.abs(dx) > Math.abs(dy)) k = dx > 0 ? "ArrowRight" : "ArrowLeft";
+        else                              k = dy > 0 ? "ArrowDown"  : "ArrowUp";
+        feed(k);
+      }
+    };
+
+    const init = () => {
+      document.addEventListener("keydown", (e) => {
+        const k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+        feed(k);
+      });
+      document.addEventListener("touchstart", onTouchStart, { passive: true });
+      document.addEventListener("touchend",   onTouchEnd,   { passive: true });
       overlay.addEventListener("click", close);
     };
 
