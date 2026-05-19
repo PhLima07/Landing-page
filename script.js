@@ -77,8 +77,12 @@
 
     const flash = () => {
       btn.classList.add("is-copied");
+      btn.setAttribute("aria-label", "E-mail copiado para a área de transferência");
       clearTimeout(timer);
-      timer = setTimeout(() => btn.classList.remove("is-copied"), FEEDBACK_MS);
+      timer = setTimeout(() => {
+        btn.classList.remove("is-copied");
+        btn.setAttribute("aria-label", "Copiar e-mail");
+      }, FEEDBACK_MS);
     };
 
     const init = () => {
@@ -194,8 +198,13 @@
     let w = 0, h = 0, dpr = 1, raf = 0;
     let particles = [];
     const mouse = { x: -9999, y: -9999, active: false };
+    const coarse = window.matchMedia?.("(pointer: coarse)").matches;
 
-    const COUNT = () => Math.min(110, Math.floor((w * h) / 18000));
+    const COUNT = () => {
+      const max = coarse ? 55 : 110;
+      const density = coarse ? 36000 : 18000;
+      return Math.min(max, Math.floor((w * h) / density));
+    };
 
     const accent = () =>
       getComputedStyle(document.documentElement).getPropertyValue("--soul-glow").trim() || "#6ab7d4";
@@ -412,7 +421,39 @@
   })();
 
   /* =========================================================
-     9. Ano no rodapé
+     9. Barra de progresso de leitura (gauge de Geo)
+     ========================================================= */
+  const ScrollProgress = (() => {
+    const bar = $("#scroll-progress > span");
+    if (!bar) return { init: () => {} };
+
+    let ticking = false;
+    const update = () => {
+      const scrolled = window.scrollY;
+      const max = (document.documentElement.scrollHeight - window.innerHeight) || 1;
+      const pct = Math.min(100, Math.max(0, (scrolled / max) * 100));
+      bar.style.width = pct + "%";
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    };
+
+    const init = () => {
+      update();
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll, { passive: true });
+    };
+
+    return { init };
+  })();
+
+  /* =========================================================
+     10. Ano no rodapé
      ========================================================= */
   const FooterYear = (() => {
     const init = () => {
@@ -432,6 +473,7 @@
     DreamNail.init();
     MobileNav.init();
     GeoCounter.init();
+    ScrollProgress.init();
     FooterYear.init();
   };
 
