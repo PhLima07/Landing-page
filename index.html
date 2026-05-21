@@ -59,6 +59,7 @@
       <ul id="primary-menu" class="nav-list">
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#paixoes">Paixões</a></li>
         <li><a href="#galeria">Galeria</a></li>
         <li><a href="#inspiracao">Inspiração</a></li>
         <li><a href="#contato">Contato</a></li>
@@ -140,9 +141,11 @@
             <em>construir coisas que funcionam</em>. Daí o código me fisgou.
           </p>
           <p>
-            Quando não estou no teclado, estou com a chuteira nos pés. <strong>Futebol</strong> é minha
-            segunda religião. E quando volto à tela, viro jogador de PC compulsivo — passo horas em
-            mundos pixelados.
+            Fora do teclado, sou movido a paixões. Sou <strong>torcedor doente do Cruzeiro</strong> —
+            acompanhar o time é uma das maiores paixões da minha vida. Curto <strong>correr</strong> e
+            treinar na <strong>academia</strong>, toco <strong>violão e guitarra</strong> sempre que dá,
+            e quando quero desligar viro jogador de PC compulsivo. Música, esporte e jogos: é o que me
+            equilibra fora do código.
           </p>
           <p>
             Hoje curso <strong>Engenharia de Software</strong> no Ibmec BH e faço parte da
@@ -172,6 +175,10 @@
               <dd>Liga IbTech (extracurricular)</dd>
             </div>
             <div class="stat">
+              <dt>Time do coração</dt>
+              <dd>Cruzeiro</dd>
+            </div>
+            <div class="stat">
               <dt>Ano de nascimento</dt>
               <dd>
                 <span class="geo-counter" data-count-to="2007">0</span>
@@ -187,7 +194,7 @@
         <span class="section__kicker">02</span>
         <h2 id="charms-title" class="section__title">Habilidades</h2>
         <p class="section__sub">
-          Tecnologias, ferramentas e paixões que carrego comigo no dia a dia.
+          Tecnologias e ferramentas que uso pra construir.
         </p>
         <div class="ornament" aria-hidden="true">
           <span></span><span class="dot"></span><span></span>
@@ -198,7 +205,6 @@
         <button class="chip is-active" type="button" role="tab" aria-selected="true" data-filter="all">Todos</button>
         <button class="chip" type="button" role="tab" aria-selected="false" data-filter="frontend">Frontend</button>
         <button class="chip" type="button" role="tab" aria-selected="false" data-filter="ferramentas">Ferramentas</button>
-        <button class="chip" type="button" role="tab" aria-selected="false" data-filter="paixoes">Paixões</button>
       </div>
 
       <ul class="charms" role="list">
@@ -242,36 +248,62 @@
           <h3 class="charm__name">VS Code</h3>
           <p class="charm__desc">Editor do dia a dia. Atalhos, extensões e fluxo de trabalho consolidado.</p>
         </li>
-        <li class="charm" data-category="paixoes">
+      </ul>
+    </section>
+
+    <section id="paixoes" class="section section--passions" aria-labelledby="paixoes-title">
+      <div class="section__heading">
+        <span class="section__kicker">03</span>
+        <h2 id="paixoes-title" class="section__title">Paixões</h2>
+        <p class="section__sub">O que me move quando o computador desliga.</p>
+        <div class="ornament" aria-hidden="true">
+          <span></span><span class="dot"></span><span></span>
+        </div>
+      </div>
+
+      <ul class="passions" role="list">
+        <li class="charm">
           <div class="charm__medallion" aria-hidden="true">
-            <span class="charm__symbol">⚽</span>
-            <span class="charm__notch">3</span>
+            <span class="charm__symbol">✦</span>
           </div>
-          <h3 class="charm__name">Futebol</h3>
-          <p class="charm__desc">Religião paralela. Onde o teclado descansa, a chuteira assume o ofício.</p>
+          <h3 class="charm__name">Cruzeiro</h3>
+          <p class="charm__desc">Torcedor desde sempre. Acompanhar o Cruzeiro é uma das maiores paixões da minha vida.</p>
         </li>
-        <li class="charm" data-category="paixoes">
+        <li class="charm">
+          <div class="charm__medallion" aria-hidden="true">
+            <span class="charm__symbol">♫</span>
+          </div>
+          <h3 class="charm__name">Música</h3>
+          <p class="charm__desc">Toco violão e guitarra. Música é meu jeito de relaxar e me expressar.</p>
+        </li>
+        <li class="charm">
+          <div class="charm__medallion" aria-hidden="true">
+            <span class="charm__symbol">🏋</span>
+          </div>
+          <h3 class="charm__name">Treino &amp; Corrida</h3>
+          <p class="charm__desc">Academia e corrida fazem parte da rotina — corpo e mente em equilíbrio.</p>
+        </li>
+        <li class="charm">
           <div class="charm__medallion" aria-hidden="true">
             <span class="charm__symbol">🎮</span>
-            <span class="charm__notch">4</span>
           </div>
           <h3 class="charm__name">PC Gaming</h3>
-          <p class="charm__desc">Hollow Knight, mundos pixelados e horas perdidas em corredores sem mapa.</p>
-        </li>
-        <li class="charm" data-category="paixoes">
-          <div class="charm__medallion" aria-hidden="true">
-            <span class="charm__symbol">⌘</span>
-            <span class="charm__notch">2</span>
-          </div>
-          <h3 class="charm__name">Computação</h3>
-          <p class="charm__desc">A curiosidade primeira: entender como cada peça da máquina conversa.</p>
+          <p class="charm__desc">Hollow Knight e outros mundos pixelados nas horas vagas.</p>
         </li>
       </ul>
+
+      <figure class="passion-feature">
+        <img src="assets/guitar.jpg"
+             alt="Mãos dedilhando um violão acústico sob luz quente."
+             loading="lazy" decoding="async" fetchpriority="low"
+             width="1200" height="800">
+        <figcaption>Violão e guitarra — quando o código descansa, a música assume.</figcaption>
+      </figure>
     </section>
 
     <section id="galeria" class="section section--gallery" aria-labelledby="memorias-title">
       <div class="section__heading">
-        <span class="section__kicker">03</span>
+        <span class="section__kicker">04</span>
         <h2 id="memorias-title" class="section__title">Galeria</h2>
         <p class="section__sub">Fragmentos visuais. Em breve substituídos por fotos minhas.</p>
         <div class="ornament" aria-hidden="true">
@@ -306,7 +338,7 @@
 
     <section id="inspiracao" class="section section--video" aria-labelledby="sonho-title">
       <div class="section__heading">
-        <span class="section__kicker">04</span>
+        <span class="section__kicker">05</span>
         <h2 id="sonho-title" class="section__title">Inspiração</h2>
         <p class="section__sub">O jogo que me empurrou a estudar programação — trailer oficial de Hollow Knight.</p>
         <div class="ornament" aria-hidden="true">
@@ -337,7 +369,7 @@
 
     <section id="contato" class="section section--contact" aria-labelledby="contato-title">
       <div class="section__heading">
-        <span class="section__kicker">05</span>
+        <span class="section__kicker">06</span>
         <h2 id="contato-title" class="section__title">Contato</h2>
         <p class="section__sub">Aberto a conversas — projetos, oportunidades de estágio, networking ou uma boa indicação de jogo.</p>
         <div class="ornament" aria-hidden="true">
@@ -403,11 +435,15 @@
     </p>
   </footer>
 
-  <div id="dream-overlay" class="dream-overlay" aria-hidden="true">
-    <div class="dream-overlay__inner">
-      <p class="dream-overlay__title">Dream Nail</p>
-      <p class="dream-overlay__line">"Não em soluços, mas em chamas brilhantes."</p>
-      <p class="dream-overlay__line dream-overlay__line--small">Pressione qualquer tecla para retornar.</p>
+  <div id="konami-overlay" class="konami-overlay" aria-hidden="true">
+    <div class="konami-overlay__inner">
+      <img class="konami-overlay__crest"
+           src="assets/cruzeiro.svg"
+           alt="Emblema do Cruzeiro Esporte Clube"
+           width="280" height="280"
+           loading="lazy" decoding="async">
+      <p class="konami-overlay__line">Cruzeiro Esporte Clube — uma das maiores paixões da minha vida.</p>
+      <p class="konami-overlay__line konami-overlay__line--small">Pressione qualquer tecla para retornar.</p>
     </div>
   </div>
 
