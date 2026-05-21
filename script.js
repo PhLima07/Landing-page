@@ -299,12 +299,12 @@
   })();
 
   /* =========================================================
-     6. Konami code → Dream Nail (easter egg criativo)
-     ↑ ↑ ↓ ↓ ← → ← → B A  → ativa overlay onírica
+     6. Konami code → easter egg (overlay com o escudo do Cruzeiro)
+     ↑ ↑ ↓ ↓ ← → ← → B A
      Desktop: teclado. Mobile: swipes + 2 toques.
      ========================================================= */
-  const DreamNail = (() => {
-    const overlay = $("#dream-overlay");
+  const KonamiEgg = (() => {
+    const overlay = $("#konami-overlay");
     if (!overlay) return { init: () => {} };
 
     const SEQ = [
@@ -340,7 +340,7 @@
       if (active) return;
       active = true;
       overlay.classList.add("is-active");
-      document.body.classList.add("is-dreaming");
+      document.body.classList.add("is-konami");
       if (progress) progress.classList.remove("is-active");
       tapToggle = 0;
     };
@@ -349,7 +349,7 @@
       if (!active) return;
       active = false;
       overlay.classList.remove("is-active");
-      document.body.classList.remove("is-dreaming");
+      document.body.classList.remove("is-konami");
     };
 
     const feed = (k) => {
@@ -540,7 +540,7 @@
     Reveal.init();
     CharmFilter.init();
     SoulParticles.init();
-    DreamNail.init();
+    KonamiEgg.init();
     MobileNav.init();
     GeoCounter.init();
     ScrollProgress.init();

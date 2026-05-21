@@ -1053,56 +1053,51 @@ main { position: relative; z-index: 1; }
 .site-footer__attrib a:hover { border-bottom-color: var(--gold); }
 [data-theme="light"] .site-footer__attrib img { filter: invert(0.85); }
 
-/* ============ Dream Nail overlay ============ */
-.dream-overlay {
+/* ============ Easter egg — overlay do Konami code ============ */
+.konami-overlay {
   position: fixed;
   inset: 0;
   z-index: 9999;
   display: grid;
   place-items: center;
   background:
-    radial-gradient(ellipse at center, rgba(240, 214, 140, 0.18), transparent 60%),
-    rgba(6, 8, 14, 0.92);
+    radial-gradient(ellipse at center, rgba(43, 76, 158, 0.28), transparent 62%),
+    rgba(6, 8, 14, 0.94);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--t-slow);
 }
-.dream-overlay.is-active {
+.konami-overlay.is-active {
   opacity: 1;
   pointer-events: auto;
 }
-.dream-overlay__inner {
+.konami-overlay__inner {
   text-align: center;
   padding: var(--sp-7);
   max-width: 540px;
 }
-.dream-overlay__title {
-  font-family: var(--ff-display);
-  font-size: clamp(2.25rem, 8vw, 4rem);
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: #f7e9b8;
-  margin-bottom: var(--sp-5);
-  text-shadow:
-    0 0 20px rgba(247, 233, 184, 0.8),
-    0 0 60px rgba(240, 214, 140, 0.5);
-  animation: dreamPulse 2.6s ease-in-out infinite;
+.konami-overlay__crest {
+  width: clamp(180px, 40vw, 280px);
+  height: auto;
+  margin: 0 auto var(--sp-5);
+  filter: drop-shadow(0 0 30px rgba(58, 120, 200, 0.7));
+  animation: crestGlow 2.8s ease-in-out infinite;
 }
-@keyframes dreamPulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.55; }
+@keyframes crestGlow {
+  0%, 100% { filter: drop-shadow(0 0 24px rgba(58, 120, 200, 0.55)); transform: scale(1); }
+  50%      { filter: drop-shadow(0 0 44px rgba(90, 147, 204, 0.9));  transform: scale(1.04); }
 }
-.dream-overlay__line {
+.konami-overlay__line {
   font-family: var(--ff-body);
   font-size: var(--fs-md);
   font-style: italic;
   color: #d6e6ec;
   margin: 0 auto var(--sp-3);
-  text-shadow: 0 0 12px rgba(106, 183, 212, 0.4);
+  text-shadow: 0 0 12px rgba(58, 120, 200, 0.5);
 }
-.dream-overlay__line--small {
+.konami-overlay__line--small {
   font-size: var(--fs-sm);
   color: #9aacb8;
   font-style: normal;
@@ -1129,7 +1124,7 @@ main { position: relative; z-index: 1; }
 }
 #konami-progress.is-active { opacity: 0.85; }
 
-body.is-dreaming { overflow: hidden; }
+body.is-konami { overflow: hidden; }
 
 /* ============ Animação de entrada ============ */
 .reveal {
