@@ -155,7 +155,7 @@
      ========================================================= */
   const CharmFilter = (() => {
     const chips  = $$(".charms__filters .chip");
-    const charms = $$(".charm");
+    const charms = $$(".charms .charm");
     if (!chips.length || !charms.length) return { init: () => {} };
 
     const apply = (filter) => {
