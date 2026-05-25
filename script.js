@@ -307,7 +307,8 @@
      ========================================================= */
   const DreamNail = (() => {
     const overlay = $("#dream-overlay");
-    if (!overlay) return { init: () => {} };
+    const inner   = overlay ? overlay.querySelector(".dream-overlay__inner") : null;
+    if (!overlay || !inner) return { init: () => {} };
 
     const SEQ = [
       "ArrowUp","ArrowUp","ArrowDown","ArrowDown",
@@ -317,6 +318,7 @@
     let idx = 0;
     let active = false;
     let progress = null;
+    let lastFocus = null;
 
     const buildProgress = () => {
       const el = document.createElement("div");
@@ -340,21 +342,30 @@
     const open = () => {
       if (active) return;
       active = true;
+      lastFocus = document.activeElement;
+      overlay.setAttribute("aria-hidden", "false");
       overlay.classList.add("is-active");
       document.body.classList.add("is-dreaming");
       if (progress) progress.classList.remove("is-active");
+      inner.focus();
     };
 
     const close = () => {
       if (!active) return;
       active = false;
+      overlay.setAttribute("aria-hidden", "true");
       overlay.classList.remove("is-active");
       document.body.classList.remove("is-dreaming");
+      lastFocus?.focus();
     };
 
     const init = () => {
       document.addEventListener("keydown", (e) => {
-        if (active) { close(); return; }
+        if (active) {
+          if (e.key === "Tab") { e.preventDefault(); return; }
+          close();
+          return;
+        }
 
         const k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
 
