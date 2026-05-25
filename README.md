@@ -2,6 +2,10 @@
 
 Cartão de visita pessoal feito como primeiro projeto público da minha trajetória. Sou estudante de **Engenharia de Software** no **Ibmec BH** e este projeto é o **Desafio 01** proposto pela **Liga IbTech** — a liga de tecnologia da faculdade. Visual inspirado no jogo **Hollow Knight**.
 
+## Acesse
+
+**[phlima07.github.io/Landing-page](https://phlima07.github.io/Landing-page/)**
+
 ## Sobre
 
 Página única, em HTML, CSS e JavaScript puros — sem frameworks, sem build, sem atalhos. A ideia é simples: quando alguém perguntar o que eu faço, eu mando o link.
@@ -37,9 +41,9 @@ python3 -m http.server 8000
     ├── favicon.svg     # ícone (máscara estilizada)
     ├── knight.jpg      # imagem do hero (também serve como og:image)
     ├── hk-logo.png     # logo do jogo (atribuição no rodapé)
-    ├── memory-1.jpg    # galeria — troque pela sua foto
-    ├── memory-2.jpg    # galeria — troque pela sua foto
-    └── memory-3.jpg    # galeria — troque pela sua foto
+    ├── memory-1.jpg    # galeria — substituir pela sua foto
+    ├── memory-2.jpg    # galeria — substituir pela sua foto
+    └── memory-3.jpg    # galeria — substituir pela sua foto
 ```
 
 ## Funcionalidades
