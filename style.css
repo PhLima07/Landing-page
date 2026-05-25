@@ -1020,17 +1020,18 @@ main { position: relative; z-index: 1; }
 .site-footer__attrib a:hover { border-bottom-color: var(--gold); }
 [data-theme="light"] .site-footer__attrib img { filter: invert(0.85); }
 
-/* ============ Dream Nail overlay ============ */
+/* ============ Cruzeiro overlay (easter egg) ============ */
 .dream-overlay {
   position: fixed;
   inset: 0;
   z-index: 9999;
   display: grid;
   place-items: center;
-  background: radial-gradient(ellipse at center, rgba(240, 214, 140, 0.16), rgba(10, 13, 20, 0.95) 70%);
+  background: radial-gradient(ellipse at center, rgba(27, 63, 140, 0.35) 0%, rgba(10, 13, 20, 0.97) 65%);
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--t-slow);
+  cursor: pointer;
 }
 .dream-overlay.is-active {
   opacity: 1;
@@ -1039,32 +1040,71 @@ main { position: relative; z-index: 1; }
 .dream-overlay__inner {
   text-align: center;
   padding: var(--sp-7);
-  max-width: 540px;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+  outline: none;
+}
+.dream-overlay__crest {
+  margin-bottom: var(--sp-2);
+  filter: drop-shadow(0 0 24px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 60px rgba(27, 63, 140, 0.9));
+  animation: crestFloat 4s ease-in-out infinite;
+}
+.dream-overlay__crest-svg {
+  display: block;
+}
+@keyframes crestFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.03); }
 }
 .dream-overlay__title {
   font-family: var(--ff-display);
-  font-size: var(--fs-xl);
-  letter-spacing: 0.3em;
+  font-size: var(--fs-lg);
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--essence);
-  margin-bottom: var(--sp-5);
-  text-shadow: 0 0 40px var(--essence);
-  animation: dreamPulse 2.6s ease-in-out infinite;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 0 30px rgba(27, 63, 140, 1), 0 0 60px rgba(255, 255, 255, 0.4);
+  animation: cruzeiroGlow 2.8s ease-in-out infinite;
 }
-@keyframes dreamPulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.55; }
+@keyframes cruzeiroGlow {
+  0%, 100% { text-shadow: 0 0 30px rgba(27, 63, 140, 1), 0 0 60px rgba(255, 255, 255, 0.4); }
+  50% { text-shadow: 0 0 50px rgba(27, 63, 140, 1), 0 0 90px rgba(255, 255, 255, 0.6); }
+}
+.dream-overlay__stars {
+  display: flex;
+  gap: var(--sp-3);
+  color: #c9e0ff;
+  font-size: 1.4rem;
+}
+.dream-overlay__stars span {
+  animation: starTwinkle 1.8s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(200, 230, 255, 0.9);
+}
+.dream-overlay__stars span:nth-child(1) { animation-delay: 0s; }
+.dream-overlay__stars span:nth-child(2) { animation-delay: 0.36s; }
+.dream-overlay__stars span:nth-child(3) { animation-delay: 0.72s; }
+.dream-overlay__stars span:nth-child(4) { animation-delay: 1.08s; }
+.dream-overlay__stars span:nth-child(5) { animation-delay: 1.44s; }
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.5; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.2); }
 }
 .dream-overlay__line {
   font-family: var(--ff-body);
   font-size: var(--fs-md);
   font-style: italic;
-  color: var(--soul);
-  margin: 0 auto var(--sp-3);
+  color: #d0e4ff;
+  margin: 0;
+  max-width: 34ch;
 }
 .dream-overlay__line--small {
   font-size: var(--fs-sm);
-  color: var(--text-soft);
+  color: rgba(208, 228, 255, 0.55);
+  font-style: normal;
+  letter-spacing: 0.04em;
 }
 
 #konami-progress {
@@ -1087,7 +1127,10 @@ main { position: relative; z-index: 1; }
 }
 #konami-progress.is-active { opacity: 0.85; }
 
-body.is-dreaming {
+body.is-dreaming .site-header,
+body.is-dreaming #soul-canvas,
+body.is-dreaming main,
+body.is-dreaming .site-footer {
   filter: hue-rotate(-15deg) saturate(0.75) brightness(0.85);
   transition: filter var(--t-slow);
 }
